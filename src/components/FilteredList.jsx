@@ -29,19 +29,26 @@ class FilteredList extends Component{
     }
 
     render(){
+        const filtered = this.props.items.filter(this.filterItem);
         return (
-            <div>
-                <input 
-                type="text" 
-                placeholder='Search...'
-                onChange={this.onSearch}
-                />
-                <DropdownButton title="Filter" onSelect={this.onFilter}>
-                    <Dropdown.Item eventKey="All">All</Dropdown.Item>
-                    <Dropdown.Item eventKey="Fruit">Fruit</Dropdown.Item>
-                    <Dropdown.Item eventKey="Vegetable">Vegetables</Dropdown.Item>
-                </DropdownButton>
-                <List items={this.props.items.filter(this.filterItem)} />
+            <div className="card">
+                <p className='module-label'>Module 4: FilteredList + search + dropdown</p>
+                <div className="filtered-list">
+                    <div className='filtered-list-controls'>
+                        <input 
+                        type="text" 
+                        placeholder='Search...'
+                        onChange={this.onSearch}
+                        />
+                        <DropdownButton title={`Type: ${this.state.type}`} onSelect={this.onFilter}>
+                            <Dropdown.Item eventKey="All">All</Dropdown.Item>
+                            <Dropdown.Item eventKey="Fruit">Fruit</Dropdown.Item>
+                            <Dropdown.Item eventKey="Vegetable">Vegetables</Dropdown.Item>
+                        </DropdownButton>
+                    </div>
+                    <p className='result-count'>{filtered.length} item{filtered.length !== 1 ? 's' : ''} shown</p>
+                    <List items={filtered} />
+                </div>
             </div>
         );
     }
