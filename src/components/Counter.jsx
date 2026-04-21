@@ -17,11 +17,14 @@ class Counter extends Component {
   
     render() {
         return (
-            <div className="counter">
-                <p>{this.state.count}</p>
-                <button onClick={this.incrementCount}>
-                    Increment
-                </button>
+            <div className="card">    
+                <p className='module-label'>Module 2: Counter + state + button events</p>
+                <div className="counter">
+                    <p>{this.state.count}</p>
+                    <button onClick={this.incrementCount}>
+                        Increment
+                    </button>
+                </div>
             </div>
         );
     }

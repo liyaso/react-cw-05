@@ -6,6 +6,12 @@
   padding: 48px 24px 80px;
 }
 
+.card{
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+
 .module-label{
   margin-bottom: 12px;
   font-size: 20px;
